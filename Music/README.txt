@@ -1,0 +1,1 @@
+Music folder is ready for the project soundtrack. No music is currently configured.

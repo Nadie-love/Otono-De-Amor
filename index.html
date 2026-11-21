@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#17101f">
+  <link rel="stylesheet" href="Css/style.css">
+  <link rel="stylesheet" href="Css/style.mobile.css">
+</head>
+<body>
+  <main class="scene">
+    <canvas id="sky" aria-hidden="true"></canvas>
+    <div class="atmosphere"></div>
+    <svg class="mountains" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+      <defs><linearGradient id="far" x2="0" y2="1"><stop stop-color="#512746"/><stop offset="1" stop-color="#30203a"/></linearGradient><linearGradient id="near" x2="0" y2="1"><stop stop-color="#2c1d37"/><stop offset="1" stop-color="#191425"/></linearGradient><linearGradient id="snow" x2="0" y2="1"><stop stop-color="#8c405a" stop-opacity=".24"/><stop offset="1" stop-color="#452a42" stop-opacity=".03"/></linearGradient></defs>
+      <path fill="url(#far)" d="M0 550 116 458 204 503 C250 478 310 365 347 332 Q356 323 365 336 C398 371 425 425 451 451 C505 413 557 309 584 276 Q593 265 602 278 C635 319 669 380 695 406 C749 365 793 259 814 214 Q822 201 831 215 C869 272 905 342 931 376 C984 340 1040 286 1064 275 Q1072 269 1080 281 C1116 324 1154 407 1180 437 L1284 335 C1344 378 1408 464 1440 485 L1600 396 V900H0Z"/>
+      <path fill="#c26370" opacity=".25" d="M204 503 347 332 317 428 257 466ZM451 451 584 276 565 377 510 408ZM695 406 822 214 799 323 744 363ZM931 376 1064 275 1055 353 994 342ZM1180 437 1284 335 1272 413Z"/>
+      <path fill="#171326" opacity=".36" d="M347 332 365 336 451 451 399 426 365 374ZM584 276 602 278 695 406 642 379 602 319ZM822 214 831 215 931 376 876 345 831 264ZM1064 275 1080 281 1180 437 1124 401 1080 323ZM1284 335 1440 485 1375 455 1292 388Z"/>
+      <path fill="url(#near)" d="M0 650 143 557 257 615 C309 585 372 500 400 480 Q411 470 421 483 C454 522 480 568 507 587 C556 550 621 466 646 445 Q655 437 664 449 C701 491 740 541 765 565 C819 528 887 432 914 404 Q922 395 931 408 C967 448 994 501 1016 532 L1159 448 Q1228 489 1297 570 L1422 525 Q1512 530 1600 570 V868H0Z"/>
+      <path fill="#995066" opacity=".28" d="M257 615 400 480 380 548 319 584ZM507 587 652 445 631 526 572 553ZM765 565 921 404 901 487 838 526ZM1016 532 1159 448 1148 506 1081 516ZM1297 570 1422 525 1394 564Z"/>
+      <path fill="#100d1b" opacity=".42" d="M400 480 421 483 507 587 458 560 421 516ZM652 445 664 449 765 565 715 537 664 479ZM921 404 931 408 1016 532 971 509 931 446ZM1159 448 1297 570 1239 548 1168 493Z"/>
+      <path fill="#17111f" opacity=".97" d="M0 708q800-12 1600 0v192H0z"/>
+    </svg>
+    <canvas id="leaf-layer" aria-hidden="true"></canvas>
+    <canvas id="comet-layer" aria-hidden="true"></canvas>
+    <div class="foreground"></div>
+    <header class="autumn-signature" aria-label="Otoño de Amor">
+      <div class="autumn-brand"><b aria-hidden="true">✦</b> UN OTOÑO PARA DOS <b aria-hidden="true">✦</b></div>
+      <div class="autumn-kicker">una sorpresa hecha para ti</div>
+      <div class="autumn-footer">HECHO DE PEQUEÑAS COSAS BONITAS <span>♥</span> Y MUCHO CARIÑO</div>
+    </header>
+    <div class="corner-signature" aria-label="Cielo de dos"><strong>✳ ENTRE HOJAS Y ESTRELLAS</strong><span>un instante bonito para guardar</span></div>
+    <div class="interaction-cue" aria-hidden="true">TOCA EL CORAZÓN O DIBUJA UN CÍRCULO</div>
+    <div class="reveal-message" id="reveal-message" aria-live="polite" aria-atomic="true">Qué suerte coincidir contigo.</div>
+    <button class="heart-trigger" id="heart-trigger" type="button" aria-label="Toca el corazón para recibir una frase bonita" title="Una frase bonita">
+      <svg viewBox="0 0 140 140" aria-hidden="true">
+        <defs><linearGradient id="heart-autumn" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ffe6a3"/><stop offset=".42" stop-color="#f4a160"/><stop offset=".72" stop-color="#df6b51"/><stop offset="1" stop-color="#be5260"/></linearGradient></defs>
+        <rect class="frame-line" x="18" y="18" width="104" height="104" rx="4"/>
+        <path class="frame-corner" d="M18 42V29Q18 18 29 18H42M24 35V30Q24 24 30 24H35M98 18H111Q122 18 122 29V42M105 24H110Q116 24 116 30V35M18 98V111Q18 122 29 122H42M24 105V110Q24 116 30 116H35M98 122H111Q122 122 122 111V98M105 116H110Q116 116 116 110V105"/>
+        <g transform="translate(0 15)"><g class="corner-line" transform="translate(10 0) scale(.84 1)"><path d="M13 28c4-12 18-18 27-11 7 6 2 16-6 14-5-1-5-8 0-9M16 37c5-4 10-6 16-6M127 28c-4-12-18-18-27-11-7 6-2 16 6 14 5-1 5-8 0-9M124 37c-5-4-10-6-16-6M13 82c4 12 18 18 27 11 7-6 2-16-6-14-5 1-5 8 0 9M16 73c5 4 10 6 16 6M127 82c-4 12-18 18-27 11-7-6-2-16 6-14 5 1 5 8 0 9M124 73c-5 4-10 6-16 6"/></g>
+        <path class="corner-leaf" d="M36 19c4-5 9-5 12-4-1 5-4 9-10 10-2-2-3-4-2-6ZM104 19c-4-5-9-5-12-4 1 5 4 9 10 10 2-2 3-4 2-6ZM36 91c4 5 9 5 12 4-1-5-4-9-10-10-2 2-3 4-2 6ZM104 91c-4-5-9-5-12-4 1-5 4-9 10-10 2 2 3 4 2 6Z"/>
+        <path class="heart-line" d="M70 83C59 74 35 59 35 43c0-12 9-20 20-20 7 0 12 4 15 10 3-6 8-10 15-10 11 0 20 8 20 20 0 16-24 31-35 40Z"/></g>
+      </svg>
+    </button>
+    <div class="vignette"></div><div class="grain"></div>
+  </main>
+  <script src="Js/script.js"></script>
+</body>
+</html>
